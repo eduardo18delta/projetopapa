@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Box Clean</title>
+    <title>@yield('title')</title>
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">    
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -42,10 +42,18 @@
 </head>
 <body> 
     
-    <!-- header-start -->
+    <!-- Menu - inicio -->
     <header>
         @yield('header')
     </header>
-    <!-- header-end -->
+    <!-- Menu - Fim -->
+
+    <!-- slide_inicio -->
+    <div class="slider_area">
+        @yield('slide')
+    </div>
+    <!-- slide_fim -->
+
+        @yield('footer')
 
     
