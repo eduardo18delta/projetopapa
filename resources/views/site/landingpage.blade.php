@@ -11,8 +11,7 @@
                         <div class="col-xl-4 col-lg-4">
                             <div class="logo">
                                 <a href="index.html">
-                                    <!-- <img src="img/logo.png" alt=""> -->
-                                    BoxClean
+                                    <img src="img/logo.png" alt="">
                                 </a>
                             </div>
                         </div>
@@ -20,8 +19,8 @@
                             <div class="header_right d-flex align-items-center">
                                 <div class="short_contact_list">
                                     <ul>
-                                        <li><a href="#"> <i class="fa fa-envelope"></i>suporte@boxclean.com.br</a></li>
-                                        <li><a href="#"> <i class="fa fa-phone"></i> (96) 99176-7828</a></li>
+                                        <li><a href="#"> <i class="fa fa-envelope" style="color: #009CDE;"></i>suporte@boxclean.com.br</a></li>
+                                        <li><a href="#"> <i class="fa fa-phone" style="color: #009CDE;"></i> (96) 99176-7828</a></li>
                                     </ul>
                                 </div>
 
@@ -48,22 +47,10 @@
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a  href="index.html">home</a></li>
-                                            <li><a  href="service.html">Serviços</a></li>
-                                            <li><a href="About.html">Sobre</a></li>
-                                            <li><a href="#">Serviços <i class="ti-angle-down"></i></a>
-                                                <ul class="submenu">
-                                                    <li><a href="service_details.html">Caixa D'Àgua</a></li>
-                                                    <li><a href="elements.html">Reservatórios</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                                <ul class="submenu">
-                                                    <li><a href="blog.html">blog</a></li>
-                                                    <li><a href="single-blog.html">single-blog</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                        @foreach ($menus as $menu)
+                                            <li><a href="{{$menu->url}}">{{$menu->nome}}</a></li>
+                                          
+                                        @endforeach
                                         </ul>
                                     </nav>
                                 </div>
@@ -117,14 +104,13 @@
                     <div class="col-xl-3 col-md-6 col-lg-3">
                         <div class="footer_widget">
                             <h3 class="footer_title">
-                                Services
+                                Nossos Serviços
                             </h3>
                             <ul>
-                                <li><a href="#">Air Transportation</a></li>
-                                <li><a href="#">Ocean Freight</a></li>
-                                <li><a href="#">Ocean Cargo</a></li>
-                                <li><a href="#">Logistics</a></li>
-                                <li><a href="#">Warehouse Moving</a></li>
+                                <li><a href="#"></a>link Exemplo</li>
+                                <li><a href="#"></a>link Exemplo</li>
+                                <li><a href="#"></a>link Exemplo</li>
+                                <li><a href="#"></a>link Exemplo</li>                                
                             </ul>
 
                         </div>
@@ -132,41 +118,40 @@
                     <div class="col-xl-2 col-md-6 col-lg-2">
                         <div class="footer_widget">
                             <h3 class="footer_title">
-                                Company
+                                Links Rápidos
                             </h3>
                             <ul>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">News</a></li>
-                                <li><a href="#"> Testimonials</a></li>
-                                <li><a href="#"> Why Us?</a></li>
+                                <li><a href="#"></a>link Exemplo</li>
+                                <li><a href="#"></a>link Exemplo</li>
+                                <li><a href="#"></a>link Exemplo</li>
+                                <li><a href="#"></a>link Exemplo</li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-xl-3 col-md-6 col-lg-3">
                         <div class="footer_widget">
                             <h3 class="footer_title">
-                                Industries
+                                Exemplo de Links
                             </h3>
                             <ul>
-                                <li><a href="#">Chemicals</a></li>
-                                <li><a href="#">Automotive</a></li>
-                                <li><a href="#"> Consumer Goods</a></li>
-                                <li><a href="#">Life Science</a></li>
-                                <li><a href="#">Foreign Trade</a></li>
+                                <li><a href="#"></a>link Exemplo</li>
+                                <li><a href="#"></a>link Exemplo</li>
+                                <li><a href="#"></a>link Exemplo</li>
+                                <li><a href="#"></a>link Exemplo</li>
+                                <li><a href="#"></a>link Exemplo</li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-xl-4 col-md-6 col-lg-4">
                         <div class="footer_widget">
                             <h3 class="footer_title">
-                                Subscribe
+                                Newsletter
                             </h3>
                             <form action="#" class="newsletter_form">
-                                <input type="text" placeholder="Enter your mail">
-                                <button type="submit">Subscribe</button>
+                                <input type="text" placeholder="Seu Email">
+                                <button type="submit">Nossa Newsletter</button>
                             </form>
-                            <p class="newsletter_text">Esteem spirit temper too say adieus who direct esteem esteems
-                                luckily.</p>
+                            <p class="newsletter_text">Receba nossas notícas em primera mão.</p>
                         </div>
                     </div>
                 </div>
@@ -178,9 +163,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <p class="copy_right text-center">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> Box Clean | Desenvolvido por <a href="#" target="_blank">Eduardo Henrique</a>
                         </p>
                     </div>
                 </div>

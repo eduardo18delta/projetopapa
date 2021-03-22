@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\MenuController;
+use App\Http\Controllers\MenuContactController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('site.landingpage');
-});
+
+Route::get('/' , 
+	[MenuController::class, 'index'] , 
+	[MenuContactController::class, 'index'] ,
+);
+
+
+
+Route::get('/teste' ,  [MenuContactController::class, 'index'] , );
+
+
+
+
+
+
+
+
+
+
+
+// Route::get('/', function () {
+//     return view('site.landingpage');
+// });
