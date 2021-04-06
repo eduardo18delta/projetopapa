@@ -19,13 +19,16 @@
                             <div class="header_right d-flex align-items-center">
                                 <div class="short_contact_list">
                                     <ul>
-                                        <li><a href="#"> <i class="fa fa-envelope" style="color: #009CDE;"></i>suporte@boxclean.com.br</a></li>
-                                        <li><a href="#"> <i class="fa fa-phone" style="color: #009CDE;"></i> (96) 99176-7828</a></li>
+                                        @foreach ($contatos as $contato)
+                                            <li><a href="mailto:{{$contato->email}}"> <i class="fa fa-envelope" style="color: #009CDE;"></i>{{$contato->email}}</a></li>
+                                            <li><a href="tel:{{$contato->telefone}}"> <i class="fa fa-phone" style="color: #009CDE;"></i> {{$contato->telefone}}</a></li>                                          
+                                        @endforeach
                                     </ul>
                                 </div>
 
                                 <div class="book_btn d-none d-lg-block">
-                                    <a class="boxed-btn3-line" href="#">Login</a>
+                                    <a class="boxed-btn3-line" href="{{$contatos->first()->url_botao}}">{{$contatos->first()->titulo_botao}}</a>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -178,8 +181,8 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="serch_form">
-            <input type="text" placeholder="search" >
-            <button type="submit">search</button>
+            <input type="text" placeholder="Digite o que procura">
+            <button type="submit">Buscar</button>
         </div>
       </div>
     </div>

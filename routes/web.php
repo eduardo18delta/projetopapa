@@ -16,12 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/' , 
-	[MenuController::class, 'index'] , 
-	[MenuContactController::class, 'index'] ,
-);
-
-
+Route::get('/' , [MenuController::class, 'index']);
 
 Route::get('/teste' ,  [MenuContactController::class, 'index'] , );
 
@@ -38,3 +33,7 @@ Route::get('/teste' ,  [MenuContactController::class, 'index'] , );
 // Route::get('/', function () {
 //     return view('site.landingpage');
 // });
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
