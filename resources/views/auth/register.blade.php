@@ -4,6 +4,8 @@
             <img src="img/logo.png" alt="BoxClean">
         </x-slot>
 
+        
+
         <x-jet-validation-errors class="mb-4" />
 
         <form method="POST" action="{{ route('register') }}">
@@ -12,6 +14,11 @@
             <div>
                 <x-jet-label for="name" value="{{ __('Nome') }}" />
                 <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+            </div>
+
+            <div>
+                <x-jet-label for="cpf" value="{{ __('CPF') }}" />
+                <x-jet-input id="cpf" class="block mt-1 w-full" type="text" name="cpf" :value="old('cpf')" required autofocus autocomplete="name" />
             </div>
 
             <div class="mt-4">
@@ -56,5 +63,16 @@
                 </x-jet-button>
             </div>
         </form>
+        <script type="text/javascript" src="{{ asset('js/jquery-3.6.0.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/jquery.mask.js') }}"></script>
+            
+        <script>
+        $(document).ready(function(){
+                    $('#cpf').mask('000.000.000-00', {reverse: false});
+                });        
+        </script>
+        
+
+
     </x-jet-authentication-card>
 </x-guest-layout>
