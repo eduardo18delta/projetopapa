@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreUpdateHome;
 use Illuminate\Http\Request;
 use App\Models\Menu;
 use App\Models\MenuContact;
@@ -32,11 +33,18 @@ class HomeController extends Controller
     	return view('admin.contato.edit', compact('contatos'));
     }
 
-    public function update_contato($id){
+    public function update_contato(StoreUpdateHome $request , $id){
         
-        $contatos = MenuContact::find($id);
-        $contatos->update();
+        if (!$contatos = MenuContact::find($id)) {
+            return redirect()->back();
+        }
 
+      
+        $contatos->update($request->all());
+
+        return redirect()
+                ->route('listar.contato')
+                ->with('message' , 'Atualizado com sucesso');
     
     }
 
