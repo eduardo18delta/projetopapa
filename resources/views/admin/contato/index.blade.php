@@ -30,7 +30,7 @@
                             <td>{{$contato->telefone}}</td>
                             <td>{{$contato->titulo_botao}}</td>
                             <td>{{$contato->url_botao}}</td>
-                            <td><a href="/admin/contato/editar">Editar</a></td>
+                            <td><a href="/admin/contato/editar/{{$contato->id}}">Editar</a></td>
                         </tr>
                     @endforeach                    
                 </tbody>

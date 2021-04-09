@@ -27,8 +27,17 @@ class HomeController extends Controller
     	return view('admin.contato.index' , compact('contatos'));
     }
 
-    public function editar_contato(){
-        $contatos = MenuContact::get();
+    public function editar_contato($id){
+        $contatos = MenuContact::find($id);
     	return view('admin.contato.edit', compact('contatos'));
     }
+
+    public function update_contato($id){
+        
+        $contatos = MenuContact::find($id);
+        $contatos->update();
+
+    
+    }
+
 }
