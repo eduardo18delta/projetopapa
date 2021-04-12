@@ -3,9 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use LaravelLegends\PtBrValidator\Rules\FormatoCpf;
 
-class StoreUpdateHome extends FormRequest
+class StoreUpdateMenu extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,10 +24,8 @@ class StoreUpdateHome extends FormRequest
     public function rules()
     {
         return [
-            'email' => ['required' ,'min:10', 'max:160', 'email'],
-            'telefone' => ['required' ,'min:10', 'max:160'],
-            'titulo_botao' => ['required' ,'min:5', 'max:160'],
-            'url_botao' => ['required' ,'min:4', 'max:160'],
+            'nome' => ['required' ,'min:3', 'max:20'],
+            'url' => ['required' ,'min:1', 'max:160'],
         ];
     }
 }

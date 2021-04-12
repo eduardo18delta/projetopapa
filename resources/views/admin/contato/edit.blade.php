@@ -10,7 +10,6 @@
     <p>Edite aqui os contatos que aparecem no topo do menu.</p>
     
 <div class="container-fluid">
-
     
         @if ($errors->any())
             @foreach ($errors->all() as $error)
@@ -38,7 +37,7 @@
         </div>
         <div class="form-group">
             <label>Título Botão:</label>
-            <input class="form-control" type="text" name="title_botao" value="{{$contatos->titulo_botao}}">
+            <input class="form-control" type="text" name="titulo_botao" value="{{$contatos->titulo_botao}}">
         </div>
         <div class="form-group">
             <label>URL Botão:</label>

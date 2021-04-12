@@ -21,15 +21,6 @@ Route::get('/' , [MenuController::class, 'index']);
 Route::get('/teste' ,  [MenuContactController::class, 'index'] , );
 
 
-
-
-
-
-
-
-
-
-
 // Route::get('/', function () {
 //     return view('site.landingpage');
 // });

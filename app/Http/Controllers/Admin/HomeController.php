@@ -4,9 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUpdateHome;
+use App\Http\Requests\StoreUpdateMenu;
 use Illuminate\Http\Request;
 use App\Models\Menu;
 use App\Models\MenuContact;
+use UxWeb\SweetAlert\SweetAlert;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -38,14 +41,46 @@ class HomeController extends Controller
         if (!$contatos = MenuContact::find($id)) {
             return redirect()->back();
         }
-
       
         $contatos->update($request->all());
 
         return redirect()
                 ->route('listar.contato')
-                ->with('message' , 'Atualizado com sucesso');
+                 ->with('message' , 'Atualizado com sucesso');
     
     }
+
+    public function editar_menu($id){
+        $menus = Menu::find($id);
+    	return view('admin.menusite.edit', compact('menus'));
+    }
+
+    public function update_menu(StoreUpdateMenu $request , $id){
+        
+        if (!$menus = Menu::find($id)) {
+            return redirect()->back();
+        }
+      
+        $menus->update($request->all());
+
+        return redirect()
+                ->route('listar.menu')
+                 ->with('message' , 'Atualizado com sucesso');
+   
+    }
+
+    public function listar_usuarios(){
+        $users = User::all();
+        return view('admin.users.index', compact('users'));
+    }
+
+
+
+
+
+
+
+
+
 
 }

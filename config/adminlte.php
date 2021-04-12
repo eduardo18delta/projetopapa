@@ -187,7 +187,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'admin',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -233,6 +233,11 @@ return [
             'text'        => 'Ver Site',
             'url'         => '/',
             'icon'        => 'fas fa fa-sitemap',
+        ],
+        [
+            'text'        => 'Usuários',
+            'url'         => 'admin/users/listar',
+            'icon'        => 'fas fa fa-user',
         ],
         [
             'text'        => 'Dashboard Cliente',

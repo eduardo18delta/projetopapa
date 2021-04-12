@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    <p>Listagem do Menu Principal</p>
+    <p>Listagem de Usuários</p>
 
     <div class="container-fluid">
 
@@ -25,29 +25,31 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th>Ordem</th>
+                    <th>id</th>
                     <th>Nome</th>
-                    <th>URL</th>
-                    <th>Editar</th>  
+                    <th>Email</th>
+                    <th>CPF</th>
+                    <th>Tipo Usuário</th>  
+                    <th>Editar</th> 
+                    <th>Serviços</th> 
                     <th>Apagar</th> 
                     </tr>                 
                 </thead>
                 <tbody>
-                    @foreach($menus as $menu)
+                    @foreach($users as $user)
                         <tr>
-                            <td>{{$menu->id}}</td>
-                            <td>{{$menu->nome}}</td>
-                            <td>{{$menu->url}}</td>
-                            <td><a class="btn btn-success" href="/admin/menu/editar/{{$menu->id}}">Editar</a></td>
+                            <td>{{$user->id}}</td>
+                            <td>{{$user->nome}}</td>
+                            <td>{{$user->email}}</td>
+                            <td>{{$user->cpf}}</td>
+                            <td>{{$user->tipo_usuario}}</td>
+                            <td><a class="btn btn-success" href="/admin/user/editar/{{$user->id}}">Editar</a></td>
+                            <td><a class="btn btn-primary" href="/admin/user/editar/{{$user->id}}">Ver Serviços</a></td>
                             <td><a class="btn btn-danger" href="">Apagar</a></td>
                         </tr>
                     @endforeach                    
                 </tbody>
             </table>
-        </div>
-
-        <div class="row">
-            <a class="btn btn-success" href="">Adcionar novo item</a>
         </div>
     </div>
 

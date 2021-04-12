@@ -22,6 +22,10 @@
                 <input class="form-control" type="text" name="" value="{{Auth::user()->email}}" disabled="">
             </div>
             <div class="form-group">
+                <label>CPF:</label>
+                <input class="form-control" type="text" name="" value="{{Auth::user()->cpf}}" disabled="">
+            </div>
+            <div class="form-group">
                 <label>Data de criação:</label>
                 <input class="form-control" type="text" name="" value="{{Auth::user()->created_at}}" disabled="">
             </div>

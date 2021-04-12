@@ -9,6 +9,16 @@
 @section('content')
     <p>Altere aqui os contatos que aparecem no topo do menu.</p>
 
+
+    
+    @if (session('message'))
+    <div class="row">
+        <div class="alert alert-success">
+        {{ session('message') }}
+        </div>
+    </div>
+    @endif
+
     <div class="container-fluid">
         <div class="row">
             <table class="table table-striped">
@@ -30,7 +40,7 @@
                             <td>{{$contato->telefone}}</td>
                             <td>{{$contato->titulo_botao}}</td>
                             <td>{{$contato->url_botao}}</td>
-                            <td><a href="/admin/contato/editar/{{$contato->id}}">Editar</a></td>
+                            <td><a class="btn btn-success" href="/admin/contato/editar/{{$contato->id}}">Editar</a></td>
                         </tr>
                     @endforeach                    
                 </tbody>
