@@ -11,8 +11,6 @@
 
     <div class="container-fluid">
 
-        @include('sweet::alert')
-        
     @if (session('message'))
         <div class="row">
             <div class="alert alert-success">
@@ -53,22 +51,12 @@
         </div>
     </div>
 
-
-
-
-
-
-
-
-
 @stop
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
 @stop
 
-@section('js')
-    <script> console.log('Hi!'); </script>
-@stop
+
 
 

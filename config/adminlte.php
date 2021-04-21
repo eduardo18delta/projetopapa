@@ -249,6 +249,11 @@ return [
             'url'         => '/relatorios',
             'icon'        => 'fas fa-chart-area',
         ],
+        [
+            'text'        => 'Servicos',
+            'url'         => '/admin/servicos/listar',
+            'icon'        => 'fas fa-ellipsis-h',
+        ],
         ['header' => 'Configurações'],
         [
             'text' => 'Perfil',

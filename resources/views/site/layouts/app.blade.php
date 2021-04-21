@@ -52,6 +52,17 @@
     <div class="slider_area">
         @yield('slide')
     </div>
+
+    <div class="transportaion_area">
+        @yield('itens-mid')
+    </div>
+
+    <div class="service_area">
+        @yield('servicos')
+    </div>
+
+    
+
     <!-- slide_fim -->
 
         @yield('footer')

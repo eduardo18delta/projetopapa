@@ -5,11 +5,13 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUpdateHome;
 use App\Http\Requests\StoreUpdateMenu;
+use App\Http\Requests\StoreUpdateUsers;
 use Illuminate\Http\Request;
 use App\Models\Menu;
 use App\Models\MenuContact;
 use UxWeb\SweetAlert\SweetAlert;
 use App\Models\User;
+use App\Models\servicos;
 
 class HomeController extends Controller
 {
@@ -20,6 +22,11 @@ class HomeController extends Controller
     public function listar_menu(){
         $menus = Menu::get();
     	return view('admin.menusite.index' , compact('menus'));
+    }
+
+    public function listar_servicos(){
+        $servicos = servicos::get();
+    	return view('admin.servicos.index' , compact('servicos'));
     }
 
     public function listar_perfil(){
@@ -72,6 +79,26 @@ class HomeController extends Controller
     public function listar_usuarios(){
         $users = User::all();
         return view('admin.users.index', compact('users'));
+    }
+
+
+    public function editar_usuarios($id){
+        $users = User::find($id);
+    	return view('admin.users.edit', compact('users'));
+    }
+
+    public function update_usuarios(StoreUpdateUsers $request , $id){
+        
+        if (!$users = User::find($id)) {
+            return redirect()->back();
+        }
+      
+        $users->update($request->all());
+
+        return redirect()
+                ->route('listar.usuarios')
+                 ->with('message' , 'Atualizado com sucesso');
+   
     }
 
 

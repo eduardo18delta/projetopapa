@@ -98,6 +98,76 @@
 
 @endsection
 
+
+@section('itens-mid')
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-6">
+                <div class="single_transport">
+                    <div class="icon">
+                        <img src="img/svg_icon/airplane.png" alt="">
+                    </div>
+                    <h3>Exemplo 1</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni delectus officia autem ea aliquam nam doloremque, harum, repudiandae nihil labore sequi atque nostrum ullam.</p>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6">
+                <div class="single_transport">
+                    <div class="icon">
+                        <img src="img/svg_icon/live.png" alt="">
+                    </div>
+                    <h3>Exemplo 2</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore necessitatibus natus nulla reprehenderit rerum obcaecati ipsa, ab vel sapiente veniam.</p>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6">
+                <div class="single_transport">
+                    <div class="icon">
+                        <img src="img/svg_icon/world.png" alt="">
+                    </div>
+                    <h3>Exemplo 3</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis expedita velit id saepe, est obcaecati provident, nostrum non cupiditate in eos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection 
+
+
+
+@section('servicos')
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="section_title mb-50 text-center">
+                    <h3>
+                        Nossos Serviços
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="service_active owl-carousel">
+
+                    @foreach ($servicos as $servico)
+                    <div class="single_service">
+                        <div class="thumb">                            
+                            <img src=" {{url("storage/$servico->image") }}" alt="{{$servico->titulo_item}}">
+                        </div>
+                        <div class="service_info">
+                            <h3><a href="service_details.html">{{$servico->titulo_item}}</a></h3>
+                            <p>{{$servico->conteudo}}</p>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+
+
 @section('footer')
  <!-- footer start -->
  <footer class="footer">

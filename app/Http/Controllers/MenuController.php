@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Menu;
+use App\Models\servicos;
 use App\Models\MenuContact;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,8 @@ class MenuController extends Controller
     {
     	$menus = Menu::get();
         $contatos = MenuContact::get();
-    	return view('site.landingpage' , compact('menus' , 'contatos'))	;
+        $servicos = servicos::get();
+    	return view('site.landingpage' , compact('menus' , 'contatos' ,'servicos'))	;
     }
 
 }
