@@ -7,7 +7,18 @@
 @stop
 
 @section('content')
-    <p>Painel Administrativo do Site BoxClean</p>
+    <div class="row">
+        <p>Painel Administrativo do Site BoxClean</p>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-default">
+                Buscar <span class="glyphicon glyphicon-search"></span>
+                </button>
+        </div>
+    </div>
+
 @stop
 
 @section('css')
@@ -15,5 +26,8 @@
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+    <script>
+        console.log('Hi!');
+
+    </script>
 @stop

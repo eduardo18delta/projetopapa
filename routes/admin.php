@@ -25,7 +25,11 @@ Route::get('/admin/perfil' , [HomeController::class , 'listar_perfil']);
 
 
 // Rotas de CRUD dos SERVIÇOS
-Route::get('/admin/servicos/listar' , [HomeController::class , 'listar_servicos']);
+Route::get('/admin/servicos/listar' , [HomeController::class , 'listar_servicos'])->name('listar.servicos');
+Route::get('/admin/servicos/editar/{id}' , [HomeController::class , 'editar_servicos'])->name('editar.servicos');
+Route::put('/admin/servicos/atualizar/{id}' , [HomeController::class , 'update_servicos'])->name('update.servicos');
+
+
 
 
 

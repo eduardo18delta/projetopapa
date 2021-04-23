@@ -3,14 +3,17 @@
 @section('title', 'Contatos Menu')
 
 @section('content_header')
+<script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <h1>Serviços</h1>
 @stop
 
 @section('content')
-    <p>Altere aqui os Serviços.</p>
 
+    @include('sweet::alert')
 
-    
+    <p>Altere aqui os Serviços que aparecem na Home.</p>
+
     @if (session('message'))
     <div class="row">
         <div class="alert alert-success">
@@ -34,11 +37,11 @@
                 <tbody>
                     @foreach($servicos as $servico)
                         <tr>
-                            <td><img src=" {{url("storage/$servico->image") }}" alt="{{$servico->titulo_item}}" style="max-width: 200px;"></td>
+                            <td><img src=" {{url("storage/$servico->image") }}" alt="{{$servico->titulo_item}}" style="max-width: 150px;"></td>
                             <td>{{$servico->titulo_item}}</td>
                             <td>{{$servico->conteudo}}</td>
-                            <td><a class="btn btn-success" href="/admin/contato/editar/{{$servico->id}}">Editar</a></td>
-                            <td><a class="btn btn-danger" href="/admin/contato/apagar/{{$servico->id}}">Apagar</a></td>
+                            <td><a class="btn btn-success" href="/admin/servicos/editar/{{$servico->id}}">Editar</a></td>
+                            <td><a class="btn btn-danger" href="/admin/servicos/apagar/{{$servico->id}}">Apagar</a></td>
                         </tr>
                     @endforeach                    
                 </tbody>

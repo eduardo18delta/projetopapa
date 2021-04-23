@@ -24,8 +24,7 @@ class StoreUpdateServicos extends FormRequest
     public function rules()
     {
         return [
-            'titulo_geral' => ['required' ,'min:4', 'max:40'],
-            'image' => ['required' , 'max:160', 'image'],            
+            'image' => ['required' , 'image'],            
             'titulo_item' => ['required' ,'min:4', 'max:100'],            
             'conteudo' => ['required' ,'min:20', 'max:500'],            
         ];
