@@ -31,7 +31,6 @@
                     <th>Titulo Item</th>
                     <th>Conteúdo</th>
                     <th>Editar</th> 
-                    <th>Apagar</th> 
                 </tr>                 
                 </thead>
                 <tbody>
@@ -41,8 +40,7 @@
                             <td>{{$servico->titulo_item}}</td>
                             <td>{{$servico->conteudo}}</td>
                             <td><a class="btn btn-success" href="/admin/servicos/editar/{{$servico->id}}">Editar</a></td>
-                            <td><a class="btn btn-danger" href="/admin/servicos/apagar/{{$servico->id}}">Apagar</a></td>
-                        </tr>
+                       </tr>
                     @endforeach                    
                 </tbody>
             </table>
